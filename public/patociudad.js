@@ -26,12 +26,12 @@ class Pato {
     return `
       <div class="pato">
           <img src="/img/${this.imagen}" alt="${this.nombre
-      }" loading="lazy" class="pato-img">
+      }" loading="lazy" class="pato-img ${this.genero.toLowerCase()}">
           <div class="pato-info">
               <h3>${this.nombre} ${this.apellido}${relacion ? `<br>(${relacion})` : ""}</h3>
               <p>Edad: ${this.edad}</p>
               <p>Género: ${this.genero}</p>
-              <p>Fama: ${this.fama}</p>
+              <p>Fama: ${this.famoso}</p>
           </div>
       </div>
     `;
@@ -42,19 +42,9 @@ class Pato {
 class PatoFamoso extends Pato {
   constructor() {
     super()
-    this.fama = fama || ""
+    this.Famoso = Famoso || "fama"
   }
-  cargarFicheroJson(fichero = "patociudad.json") {
-    function crearArbolDesdeJson(datos) {
-      const {tipo, fama } =
-        datos;
-
-  const patoFamoso =
-        tipo == "famoso"
-          ? new Pato(fama)
-          : new Pato();
-        }
-      }
+  
 }
 
 // Clase Familia

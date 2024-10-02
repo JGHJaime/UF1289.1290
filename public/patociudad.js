@@ -32,12 +32,20 @@ class Pato {
               <h3>${this.nombre} ${this.apellido}${relacion ? `<br>(${relacion})` : ""}</h3>
               <p>Edad: ${this.edad}</p>
               <p>Género: ${this.genero}</p>
+              <p>Fama: ${this.fama}</p>
           </div>
       </div>
     `;
   }
 }
 
+// Clase PatoFamoso
+class PatoFamoso extends Pato {
+  constructor(fama){
+    this.fama = fama || ""
+  }
+}
+  
 // Clase Familia
 class Familia {
   constructor() {

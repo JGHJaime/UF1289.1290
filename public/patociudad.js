@@ -29,7 +29,7 @@ class Pato {
       this.nombre
     }" loading="lazy" class="pato-img">
           <div class="pato-info">
-              <h3>${this.nombre}${this.apellido}${relacion ? `<br>(${relacion})` : ""}</h3>
+              <h3>${this.nombre} ${this.apellido}${relacion ? `<br>(${relacion})` : ""}</h3>
               <p>Edad: ${this.edad}</p>
               <p>Género: ${this.genero}</p>
           </div>

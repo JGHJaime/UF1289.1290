@@ -44,8 +44,17 @@ class PatoFamoso extends Pato {
     super()
     this.fama = fama || ""
   }
+  cargarFicheroJson(fichero = "patociudad.json") {
+    function crearArbolDesdeJson(datos) {
+      const {tipo, fama } =
+        datos;
 
-  
+  const patoFamoso =
+        tipo == "famoso"
+          ? new Pato(fama)
+          : new Pato();
+        }
+      }
 }
 
 // Clase Familia

@@ -19,8 +19,6 @@ class Pato {
     this.pareja = pareja;
   }
 
-
-
   // Método que genera la representación en HTML de cada pato
   generarHTML(relacion = "") {
     return `
@@ -31,7 +29,6 @@ class Pato {
               <h3>${this.nombre} ${this.apellido}${relacion ? `<br>(${relacion})` : ""}</h3>
               <p>Edad: ${this.edad}</p>
               <p>Género: ${this.genero}</p>
-              
           </div>
       </div>
     `;
@@ -40,10 +37,22 @@ class Pato {
 
 // Clase PatoFamoso
 class PatoFamoso extends Pato {
-  constructor() {
-    super()
-    this.famoso = famoso || "fama"
-  }
+  constructor(tipo, nombre, apellido, edad, genero, imagen, fama) {
+    super(tipo, nombre, apellido, edad, genero, imagen, fama)
+    this.fama = fama || "fama"
+  } 
+  cargarFicheroJson(fichero = "patociudad.json") {
+    function crearpatoFamoso(datos) {
+      const { id, tipo, nombre, apellido, edad, genero, imagen, hijos, pareja, fama } =
+        datos;
+
+      const PatoFamoso =
+        tipo == "famoso"
+          ? new PatoFamoso(tipo, nombre, apellido, edad, genero, imagen)
+          : new PatoFamoso();}
+    }
+
+
   generarHTML(relacion = "") {
     return `
       <div class="PatoFamoso">
@@ -58,7 +67,9 @@ class PatoFamoso extends Pato {
       </div>
     `;
   }
+  
 }
+
 // Clase Familia
 class Familia {
   constructor() {

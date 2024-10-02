@@ -19,15 +19,14 @@ class Pato {
     this.pareja = pareja;
   }
 
-  
+
 
   // Método que genera la representación en HTML de cada pato
   generarHTML(relacion = "") {
     return `
       <div class="pato">
-          <img src="/img/${this.imagen}" alt="${
-      this.nombre
-    }" loading="lazy" class="pato-img">
+          <img src="/img/${this.imagen}" alt="${this.nombre
+      }" loading="lazy" class="pato-img">
           <div class="pato-info">
               <h3>${this.nombre} ${this.apellido}${relacion ? `<br>(${relacion})` : ""}</h3>
               <p>Edad: ${this.edad}</p>
@@ -41,11 +40,14 @@ class Pato {
 
 // Clase PatoFamoso
 class PatoFamoso extends Pato {
-  constructor(fama){
+  constructor() {
+    super()
     this.fama = fama || ""
   }
-}
+
   
+}
+
 // Clase Familia
 class Familia {
   constructor() {
@@ -98,6 +100,7 @@ class PatoCiudad {
         tipo == "pato"
           ? new Pato(tipo, nombre, apellido, edad, genero, imagen)
           : new Pato();
+
 
       // Si tiene una pareja, la agregamos
       if (pareja) {
